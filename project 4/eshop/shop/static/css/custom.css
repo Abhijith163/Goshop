@@ -1,0 +1,31 @@
+/* cart page */
+.my_custom_table{
+    min-width: 400px;
+    font-size: 14px;
+}
+
+/* .my_custom_thead{
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing :0.2em;
+    background-color: #f8f8fa!important;
+}
+
+.custom_a{
+    text-decoration: none;
+    color: #7d7df5;
+}
+
+.my_custom_button{
+    margin-top: 5px;
+} */
+
+
+.cart-link::before {
+    content: "\f07a"; /* Unicode for a shopping cart icon */
+    font-family: FontAwesome; /* Assuming you're using FontAwesome for icons */
+    margin-right: 0.5rem; /* Adjust the margin as needed */
+}
+
+/* Added the FontAwesome import */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
