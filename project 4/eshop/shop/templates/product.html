@@ -13,6 +13,8 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'shop/style.css' %}">
 <div class="container my-5">
+
+    <!-- Breadcrumb -->
     <div class="row">
         <div class="col">
             <nav aria-label="breadcrumb">
@@ -24,26 +26,31 @@
             </nav>
         </div>
     </div>
-</div>
 
-    
+    <!-- Product Details -->
     <div class="row align-items-center">
-        <div class="col-lg-6">
+
+        <!-- Product Image Column -->
+        <div class="col-lg-6 mb-4">
             <img src="{{product.image.url}}" alt="{{product.name}}" class="img-fluid rounded">
         </div>
-        
+
+        <!-- Product Info Column -->
         <div class="col-lg-6">
             <h1>{{product.name}}</h1>
-            <p class="lead" style="color: darkgreen;"> Price:{{product.price}}</p>
+            <p class="lead text-success">Price: ${{product.price}}</p>
             <h4>Product Description</h4>
             <p>{{product.description}}</p>
             
+            <!-- Add to Cart Button or Out of Stock Message -->
             {% if product.stock <= 0 %}
-                <p><b>Out of stock</b></p>
+                <p class="text-danger"><b>Out of stock</b></p>
             {% else %}
                 <a href="{% url 'cart:add_cart' product.id %}" class="btn btn-primary">Add to Cart</a>
             {% endif %}
         </div>
+
     </div>
+
 </div>
 {% endblock %}
